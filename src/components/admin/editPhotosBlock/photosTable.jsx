@@ -57,8 +57,11 @@ function PhotosTable({photos, imageCategory}) {
 
     return (
         <div>
-            {isDocEdited && <InfoAlert message={docEditedMessage}/>}
-            {isDocDeleted && <InfoAlert message={docDeletionMessage}/>}
+            {isDocEdited &&
+                <div className='my-4'><InfoAlert message={docEditedMessage}/></div>
+            }
+            {isDocDeleted &&
+                <div className='my-4'><InfoAlert message={docDeletionMessage}/></div>}
             <TableContainer className="max-h-[500px] overflow-y-scroll">
                 <Table>
                     <TableHead>

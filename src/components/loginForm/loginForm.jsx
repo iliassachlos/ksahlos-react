@@ -2,7 +2,7 @@
 import {useState} from "react";
 import {auth} from "../../firebase/firebase";
 import {signInWithEmailAndPassword} from "firebase/auth";
-import ErrorAlert from "../../components/shared/alerts/error/errorAlert";
+import ErrorAlert from "../shared/alerts/error/errorAlert";
 import {useNavigate} from "react-router-dom"
 
 function LoginForm() {

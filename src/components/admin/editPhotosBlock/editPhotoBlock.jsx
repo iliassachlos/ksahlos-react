@@ -4,7 +4,7 @@ import {getDocs, collection} from "firebase/firestore";
 import {db} from "../../../firebase/firebase";
 
 function EditPhotosBlock() {
-    const [imageCategory, setImageCategory] = useState("conceptual");
+    const [imageCategory, setImageCategory] = useState("Conceptual");
     //Photo categories
     const [conceptualPhotos, setConceptualPhotos] = useState([]);
     const [localArtPhotos, setLocalArtPhotos] = useState([]);
@@ -53,6 +53,8 @@ function EditPhotosBlock() {
         setImageCategory(e.target.value);
     }
 
+    console.log("IMAGE CAT:",imageCategory)
+
     return (
         <div>
             <select
@@ -61,7 +63,7 @@ function EditPhotosBlock() {
                 onChange={handleImageCategoryChange}
                 required
             >
-                <option value="conceptual" defaultChecked defaultValue>
+                <option value="Conceptual" defaultChecked defaultValue>
                     Illusions (Conceptual old)
                 </option>
                 <option value="Black-And-White">Black-And-White</option>
@@ -69,27 +71,23 @@ function EditPhotosBlock() {
                 <option value="Stories">Dramatic (Stories old)</option>
             </select>
 
-            {imageCategory === "conceptual" && (
+            {imageCategory === "Conceptual" && (
                 <div>
-                    <b>{imageCategory} Photos</b>
                     <PhotosTable photos={conceptualPhotos} imageCategory={imageCategory}/>
                 </div>
             )}
             {imageCategory === "Local-Art" && (
                 <div>
-                    <b>{imageCategory} Photos</b>
                     <PhotosTable photos={localArtPhotos} imageCategory={imageCategory}/>
                 </div>
             )}
             {imageCategory === "Black-And-White" && (
                 <div>
-                    <b>{imageCategory} Photos</b>
                     <PhotosTable photos={blackAndWhitePhotos} imageCategory={imageCategory}/>
                 </div>
             )}
             {imageCategory === "Stories" && (
                 <div>
-                    <b>{imageCategory} Photos</b>
                     <PhotosTable photos={dramaticPhotos} imageCategory={imageCategory}/>
                 </div>
             )}

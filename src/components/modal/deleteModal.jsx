@@ -19,7 +19,7 @@ function DeleteModal({
             const storage = getStorage()
 
             // Create a reference to the photo in Firebase storage
-            const photoRef = ref(storage, `${category}/${selectedTitle}`)
+            const photoRef = ref(storage, `${imageCategory}/${selectedTitle}`)
 
             // Delete the photo from Firebase storage
             await deleteObject(photoRef)
