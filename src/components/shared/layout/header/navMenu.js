@@ -18,11 +18,6 @@ function NavMenu({onLinkClick}) {
         }
     }
 
-    const handleCloseSubMenu = () => {
-        setActiveSubMenu(null);
-        setActiveSubMenuKey(null);
-    };
-
     return (
         <div
             className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-white/80 backdrop-blur-lg z-10 overflow-hidden">

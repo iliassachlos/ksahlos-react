@@ -18,7 +18,7 @@ function LoginPage() {
             setIsUserLoggedIn(false);
             setCheckingUserState(false);
         }
-    }, [user]);
+    }, [navigate, user]);
     console.log(user);
     return (
         <div className="bg-[#F2F2F2] w-full h-full flex justify-center items-center">
