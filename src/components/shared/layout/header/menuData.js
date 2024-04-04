@@ -28,10 +28,10 @@ export const menuData = [
     //     title: "Local Art",
     //     url: "/local-art",
     // },
-    {
-        title: "Pricing",
-        url: "/pricing",
-    },
+    // {
+    //     title: "Pricing",
+    //     url: "/pricing",
+    // },
 
     {
         title: "Contact",
