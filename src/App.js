@@ -34,7 +34,7 @@ function App() {
          <Route path="/fine-art/black-and-white" element={<BlackAndWhitePage />} />
          <Route path="/fine-art/dramatic" element={<DramaticPage />} />
          <Route path="/fine-art/illusion" element={<IllusionPage />} />
-         {/*<Route path="/local-art" element={<PricingPage/>} errorElement={<NotFoundPage/>}/>*/}
+         <Route path="/local-art" element={<PricingPage/>} errorElement={<NotFoundPage/>}/>
          <Route path="*" element={<NotFoundPage />} />
       </Routes>
    );
