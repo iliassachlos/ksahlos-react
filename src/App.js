@@ -13,6 +13,7 @@ import AdminPanelPage from "./pages/adminPanelPage";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import LocalArtPage from "./pages/local-art/localArtPage"
 
 function App() {
    useEffect(() => {
@@ -34,7 +35,7 @@ function App() {
          <Route path="/fine-art/black-and-white" element={<BlackAndWhitePage />} />
          <Route path="/fine-art/dramatic" element={<DramaticPage />} />
          <Route path="/fine-art/illusion" element={<IllusionPage />} />
-         <Route path="/local-art" element={<PricingPage/>} errorElement={<NotFoundPage/>}/>
+         <Route path="/local-art" element={<LocalArtPage/>} errorElement={<NotFoundPage/>}/>
          <Route path="*" element={<NotFoundPage />} />
       </Routes>
    );

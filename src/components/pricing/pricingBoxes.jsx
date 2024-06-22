@@ -11,7 +11,7 @@ function PricingBoxes() {
                     <ul className="text-sm text-center">
                         <li className="mb-2 font-semibold">Fine Art Prints</li>
                         <hr className="mb-2"/>
-                        <li className="mb-4">(50€)</li>
+                        <li className="mb-4">(60€)</li>
                         <li className="text-white bg-black rounded mx-14 md:mx-24 mb-4">A4</li>
                         <li className="mb-4 ">Fine Art 100% Cotton Museum Quality Paper</li>
                         <li className="mb-4">Signed By The Artist</li>
@@ -32,7 +32,7 @@ function PricingBoxes() {
                     <ul className="text-sm text-center">
                         <li className="mb-2 font-semibold">Fine Art Prints</li>
                         <hr className="mb-2"/>
-                        <li className="mb-4">(90€)</li>
+                        <li className="mb-4">(120€)</li>
                         <li className="text-white bg-black rounded mx-14 md:mx-24 mb-4">A3</li>
                         <li className="mb-4 ">Fine Art 100% Cotton Museum Quality Paper</li>
                         <li className="mb-4">Signed By The Artist</li>
@@ -53,7 +53,7 @@ function PricingBoxes() {
                     <ul className="text-sm text-center">
                         <li className="mb-2 font-semibold">Fine Art Prints</li>
                         <hr className="mb-2"/>
-                        <li className="mb-4">(110€)</li>
+                        <li className="mb-4">(150€)</li>
                         <li className="text-white bg-black rounded mx-14 md:mx-24 mb-4">A3+</li>
                         <li className="mb-4 ">Fine Art 100% Cotton Museum Quality Paper</li>
                         <li className="mb-4">Signed By The Artist</li>
@@ -74,7 +74,7 @@ function PricingBoxes() {
                     <ul className="text-sm text-center">
                         <li className="mb-2 font-semibold">Fine Art Prints</li>
                         <hr className="mb-2"/>
-                        <li className="mb-4">(180€)</li>
+                        <li className="mb-4">(200€)</li>
                         <li className="text-white bg-black rounded mx-14 md:mx-24 mb-4">A2</li>
                         <li className="mb-4 ">Fine Art 100% Cotton Museum Quality Paper</li>
                         <li className="mb-4">Signed By The Artist</li>
