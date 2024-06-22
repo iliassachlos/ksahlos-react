@@ -5,11 +5,11 @@ import Spinner from "../../components/spinner/spinner"
 import PaginationComponent from "../../components/shared/pagination"
 
 //Currently Essential
-function EssentialsPage() {
+function EssentialPage() {
     const [photosData, setPhotosData] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
 
-    const category = 'essentials'
+    const category = 'essential'
 
     const photosPerPage = 15
     const indexOfLastPhoto = currentPage * photosPerPage
@@ -56,4 +56,4 @@ function EssentialsPage() {
     )
 }
 
-export default EssentialsPage
+export default EssentialPage

@@ -14,7 +14,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import LocalArtPage from "./pages/local-art/localArtPage"
-import EssentialsPage from "./pages/fine-art/essentialsPage"
+import EssentialPage from "./pages/fine-art/essentialPage"
 
 function App() {
    useEffect(() => {
@@ -43,7 +43,7 @@ function App() {
          <Route path="/fine-art/etherial" element={<IllusionPage />} />
 
         {/* NEW Essential */}
-        <Route path="/fine-art/essentials" element={<EssentialsPage />} />
+        <Route path="/fine-art/essential" element={<EssentialPage />} />
 
          <Route path="/local-art" element={<LocalArtPage/>} errorElement={<NotFoundPage/>}/>
          <Route path="*" element={<NotFoundPage />} />

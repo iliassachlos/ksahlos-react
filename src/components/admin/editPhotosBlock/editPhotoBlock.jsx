@@ -17,7 +17,7 @@ function EditPhotosBlock() {
     const [dramaticPhotos, setDramaticPhotos] = useState([])
 
     const [localArtPhotos, setLocalArtPhotos] = useState([])
-    const [essentialsPhotos, setEssentialsPhotos] = useState()
+    const [essentialPhotos, setEssentialPhotos] = useState()
 
 
     useEffect(() => {
@@ -25,7 +25,7 @@ function EditPhotosBlock() {
         getEscapePhotos()
         getIllusionPhotos()
         getLocalArtPhotos()
-        getEssentialsPhotos()
+        getEssentialPhotos()
     }, [])
 
     //Warning: Etherial indexes to conceptual in database
@@ -59,11 +59,11 @@ function EditPhotosBlock() {
         setLocalArtPhotos(sortedPhotos)
     }
 
-    async function getEssentialsPhotos() {
-        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "essentials"))
+    async function getEssentialPhotos() {
+        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "essential"))
         const photosData = querySnapshot.docs.map((doc) => ({ ...doc.data(), uid: doc.id }))
         const sortedPhotos = photosData.sort((a, b) => a.number - b.number)
-        setEssentialsPhotos(sortedPhotos)
+        setEssentialPhotos(sortedPhotos)
     }
 
     function handleImageCategoryChange(e) {
@@ -84,7 +84,7 @@ function EditPhotosBlock() {
                 <option value="Black-And-White">Escape (Old Black And White)</option>
                 <option value="Stories">Illusion (Old Dramatic / Stories)</option>
                 <option value="Local-Art">Local-Art</option>
-                <option value="Essentials">Essentials</option>
+                <option value="Essential">Essential</option>
             </select>
 
             {imageCategory === "Conceptual" && (
@@ -107,9 +107,9 @@ function EditPhotosBlock() {
                     <PhotosTable photos={dramaticPhotos} imageCategory={imageCategory} />
                 </div>
             )}
-            {imageCategory === "Essentials" && (
+            {imageCategory === "Essential" && (
                 <div>
-                    <PhotosTable photos={essentialsPhotos} imageCategory={imageCategory} />
+                    <PhotosTable photos={essentialPhotos} imageCategory={imageCategory} />
                 </div>
             )}
         </div>

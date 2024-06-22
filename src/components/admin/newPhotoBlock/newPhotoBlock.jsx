@@ -81,7 +81,7 @@ function NewPhotoBlock() {
                 <option value="Black-And-White">Escape (Old Black And White)</option>
                 <option value="Stories">Illusion (Old Dramatic / Stories)</option>
                 <option value="Local-art">Local-Art</option>
-                <option value="Essentials">Essentials</option>
+                <option value="Essential">Essential</option>
             </select>
             <p className="text-sm">Image Number</p>
             <input

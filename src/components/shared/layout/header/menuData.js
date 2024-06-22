@@ -21,8 +21,8 @@ export const menuData = [
                 url: "/fine-art/illusion"
             },
             {
-                title: "Essentials",
-                url: "/fine-art/essentials"
+                title: "Essential",
+                url: "/fine-art/essential"
             },
             //Old Black And White
             {
