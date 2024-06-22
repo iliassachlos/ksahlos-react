@@ -1,16 +1,16 @@
 import Modal from "@mui/material/Modal"
-import {deleteDoc, doc} from "firebase/firestore"
-import {db} from "../../firebase/firebase"
-import {getStorage, ref, deleteObject} from "firebase/storage" // Import ref and deleteObject
+import { deleteDoc, doc } from "firebase/firestore"
+import { db } from "../../firebase/firebase"
+import { getStorage, ref, deleteObject } from "firebase/storage" // Import ref and deleteObject
 
 function DeleteModal({
-                         isDeleteModalOpen,
-                         onHandleDeleteModalClose,
-                         onDocDeletionComplete,
-                         imageCategory,
-                         selectedUID,
-                         selectedTitle,
-                     }) {
+    isDeleteModalOpen,
+    onHandleDeleteModalClose,
+    onDocDeletionComplete,
+    imageCategory,
+    selectedUID,
+    selectedTitle,
+}) {
 
     async function handleDeleteClick() {
         const category = imageCategory.toLowerCase()
@@ -44,7 +44,7 @@ function DeleteModal({
         onDocDeletionComplete(message)
     }
 
-    console.log("ISMODALOPEN", isDeleteModalOpen)
+    console.log("image category", imageCategory)
     return (
         <div>
             <Modal
@@ -57,7 +57,7 @@ function DeleteModal({
                     <div className="bg-white rounded shadow-md p-4">
                         <div>
                             <h1 className="text-xl font-semibold text-red-500">Warning</h1>
-                            <hr className="my-2"/>
+                            <hr className="my-2" />
                             Are you sure you want to delete this entry from the Database ?
                         </div>
                         <div className="flex justify-end items-center mt-8">

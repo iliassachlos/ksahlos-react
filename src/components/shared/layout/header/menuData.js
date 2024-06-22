@@ -10,17 +10,24 @@ export const menuData = [
     {
         title: "Fine Art",
         submenu: [
+            //Old illusion
+            {
+                title: "Etherial",
+                url: "/fine-art/etherial",
+            },
+            //Old Dramatic
             {
                 title: "Illusion",
-                url: "/fine-art/illusion",
+                url: "/fine-art/illusion"
             },
             {
-                title: "Black And White",
-                url: "/fine-art/black-and-white",
+                title: "Essentials",
+                url: "/fine-art/essentials"
             },
+            //Old Black And White
             {
-                title: "Dramatic",
-                url: "/fine-art/dramatic"
+                title: "Escape",
+                url: "/fine-art/escape",
             },
         ],
     },
@@ -36,4 +43,4 @@ export const menuData = [
         title: "Contact",
         url: "/contact",
     },
-];
+]

@@ -4,6 +4,7 @@ import {getPhotos} from "../../firebase/getPhotos"
 import Spinner from "../../components/spinner/spinner"
 import PaginationComponent from "../../components/shared/pagination"
 
+//Currently Illusion
 function DramaticPage() {
     const [photosData, setPhotosData] = useState([])
     const [currentPage, setCurrentPage] = useState(1)

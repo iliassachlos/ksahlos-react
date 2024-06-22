@@ -1,59 +1,74 @@
-import {useEffect, useState} from "react";
-import PhotosTable from "./photosTable";
-import {getDocs, collection} from "firebase/firestore";
-import {db} from "../../../firebase/firebase";
+import { useEffect, useState } from "react"
+import PhotosTable from "./photosTable"
+import { getDocs, collection } from "firebase/firestore"
+import { db } from "../../../firebase/firebase"
 
 function EditPhotosBlock() {
-    const [imageCategory, setImageCategory] = useState("Conceptual");
+    const [imageCategory, setImageCategory] = useState("Conceptual")
+    
     //Photo categories
-    const [conceptualPhotos, setConceptualPhotos] = useState([]);
-    const [localArtPhotos, setLocalArtPhotos] = useState([]);
-    const [blackAndWhitePhotos, setBlackAndWhitePhotos] = useState([]);
-    const [dramaticPhotos, setDramaticPhotos] = useState([]);
+    //etherial
+    const [conceptualPhotos, setConceptualPhotos] = useState([])
+
+    //escape
+    const [blackAndWhitePhotos, setBlackAndWhitePhotos] = useState([])
+
+    //illusion
+    const [dramaticPhotos, setDramaticPhotos] = useState([])
+
+    const [localArtPhotos, setLocalArtPhotos] = useState([])
+    const [essentialsPhotos, setEssentialsPhotos] = useState()
 
 
     useEffect(() => {
-        getIllusionPhotos();
-        getLocalArtPhotos();
-        getBlackAndWhitePhotos();
-        getDramaticPhotos();
-    }, []);
+        getEtherialPhotos()
+        getEscapePhotos()
+        getIllusionPhotos()
+        getLocalArtPhotos()
+        getEssentialsPhotos()
+    }, [])
 
-    //Warning: Illusion indexes to conceptual in database
+    //Warning: Etherial indexes to conceptual in database
+    async function getEtherialPhotos() {
+        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "conceptual"))
+        const photosData = querySnapshot.docs.map((doc) => ({ ...doc.data(), uid: doc.id }))
+        const sortedPhotos = photosData.sort((a, b) => a.number - b.number)
+        setConceptualPhotos(sortedPhotos)
+    }
+
+    //Warning: Escape indexes to black-and-white in database
+    async function getEscapePhotos() {
+        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "black-and-white"))
+        const photosData = querySnapshot.docs.map((doc) => ({ ...doc.data(), uid: doc.id }))
+        const sortedPhotos = photosData.sort((a, b) => a.number - b.number)
+        setBlackAndWhitePhotos(sortedPhotos)
+    }
+
+    //Warning: Illusion indexes to stories collection in database
     async function getIllusionPhotos() {
-        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "conceptual"));
-        const photosData = querySnapshot.docs.map((doc) => ({...doc.data(), uid: doc.id}));
-        const sortedPhotos = photosData.sort((a, b) => a.number - b.number);
-        setConceptualPhotos(sortedPhotos);
+        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "stories"))
+        const photosData = querySnapshot.docs.map((doc) => ({ ...doc.data(), uid: doc.id }))
+        const sortedPhotos = photosData.sort((a, b) => a.number - b.number)
+        setDramaticPhotos(sortedPhotos)
     }
 
     async function getLocalArtPhotos() {
-        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "local-art"));
-        const photosData = querySnapshot.docs.map((doc) => ({...doc.data(), uid: doc.id}));
-        const sortedPhotos = photosData.sort((a, b) => a.number - b.number);
-        setLocalArtPhotos(sortedPhotos);
+        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "local-art"))
+        const photosData = querySnapshot.docs.map((doc) => ({ ...doc.data(), uid: doc.id }))
+        const sortedPhotos = photosData.sort((a, b) => a.number - b.number)
+        setLocalArtPhotos(sortedPhotos)
     }
 
-    async function getBlackAndWhitePhotos() {
-        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "black-and-white"));
-        const photosData = querySnapshot.docs.map((doc) => ({...doc.data(), uid: doc.id}));
-        const sortedPhotos = photosData.sort((a, b) => a.number - b.number);
-        setBlackAndWhitePhotos(sortedPhotos);
-    }
-
-    //Warning: Dramatic indexes to stories collection in database
-    async function getDramaticPhotos() {
-        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "stories"));
-        const photosData = querySnapshot.docs.map((doc) => ({...doc.data(), uid: doc.id}));
-        const sortedPhotos = photosData.sort((a, b) => a.number - b.number);
-        setDramaticPhotos(sortedPhotos);
+    async function getEssentialsPhotos() {
+        const querySnapshot = await getDocs(collection(db, "photos", "gallery", "essentials"))
+        const photosData = querySnapshot.docs.map((doc) => ({ ...doc.data(), uid: doc.id }))
+        const sortedPhotos = photosData.sort((a, b) => a.number - b.number)
+        setEssentialsPhotos(sortedPhotos)
     }
 
     function handleImageCategoryChange(e) {
-        setImageCategory(e.target.value);
+        setImageCategory(e.target.value)
     }
-
-    console.log("IMAGE CAT:",imageCategory)
 
     return (
         <div>
@@ -64,35 +79,41 @@ function EditPhotosBlock() {
                 required
             >
                 <option value="Conceptual" defaultChecked defaultValue>
-                    Illusions (Conceptual old)
+                    Etherial (Old Illusion / Conceptual)
                 </option>
-                <option value="Black-And-White">Black-And-White</option>
+                <option value="Black-And-White">Escape (Old Black And White)</option>
+                <option value="Stories">Illusion (Old Dramatic / Stories)</option>
                 <option value="Local-Art">Local-Art</option>
-                <option value="Stories">Dramatic (Stories old)</option>
+                <option value="Essentials">Essentials</option>
             </select>
 
             {imageCategory === "Conceptual" && (
                 <div>
-                    <PhotosTable photos={conceptualPhotos} imageCategory={imageCategory}/>
+                    <PhotosTable photos={conceptualPhotos} imageCategory={imageCategory} />
                 </div>
             )}
             {imageCategory === "Local-Art" && (
                 <div>
-                    <PhotosTable photos={localArtPhotos} imageCategory={imageCategory}/>
+                    <PhotosTable photos={localArtPhotos} imageCategory={imageCategory} />
                 </div>
             )}
             {imageCategory === "Black-And-White" && (
                 <div>
-                    <PhotosTable photos={blackAndWhitePhotos} imageCategory={imageCategory}/>
+                    <PhotosTable photos={blackAndWhitePhotos} imageCategory={imageCategory} />
                 </div>
             )}
             {imageCategory === "Stories" && (
                 <div>
-                    <PhotosTable photos={dramaticPhotos} imageCategory={imageCategory}/>
+                    <PhotosTable photos={dramaticPhotos} imageCategory={imageCategory} />
+                </div>
+            )}
+            {imageCategory === "Essentials" && (
+                <div>
+                    <PhotosTable photos={essentialsPhotos} imageCategory={imageCategory} />
                 </div>
             )}
         </div>
-    );
+    )
 }
 
-export default EditPhotosBlock;
+export default EditPhotosBlock

@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import LocalArtPage from "./pages/local-art/localArtPage"
+import EssentialsPage from "./pages/fine-art/essentialsPage"
 
 function App() {
    useEffect(() => {
@@ -32,9 +33,18 @@ function App() {
          <Route path="/admin" element={<AdminPanelPage />} />
 
          {/*Galleries*/}
-         <Route path="/fine-art/black-and-white" element={<BlackAndWhitePage />} />
-         <Route path="/fine-art/dramatic" element={<DramaticPage />} />
-         <Route path="/fine-art/illusion" element={<IllusionPage />} />
+         {/* old Black And White */}
+         <Route path="/fine-art/escape" element={<BlackAndWhitePage />} />
+
+         {/* old Dramatic*/}
+         <Route path="/fine-art/illusion" element={<DramaticPage />} />
+
+         {/* old Illusion */}
+         <Route path="/fine-art/etherial" element={<IllusionPage />} />
+
+        {/* NEW Essential */}
+        <Route path="/fine-art/essentials" element={<EssentialsPage />} />
+
          <Route path="/local-art" element={<LocalArtPage/>} errorElement={<NotFoundPage/>}/>
          <Route path="*" element={<NotFoundPage />} />
       </Routes>

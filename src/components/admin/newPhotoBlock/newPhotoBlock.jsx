@@ -77,10 +77,11 @@ function NewPhotoBlock() {
                 onChange={(e) => setImageCategory(e.target.value)}
                 required
             >
-                <option value="Conceptual">Illusions (Old Conceptual)</option>
-                <option value="Black-And-White">Black-And-White</option>
-                <option value="Stories">Dramatic (Old Stories)</option>
+                <option value="Conceptual">Etherial (Old Illusion / Conceptual)</option>
+                <option value="Black-And-White">Escape (Old Black And White)</option>
+                <option value="Stories">Illusion (Old Dramatic / Stories)</option>
                 <option value="Local-art">Local-Art</option>
+                <option value="Essentials">Essentials</option>
             </select>
             <p className="text-sm">Image Number</p>
             <input
