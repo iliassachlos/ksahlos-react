@@ -11,19 +11,19 @@ export const menuData = [
         title: "Fine Art",
         submenu: [
             //Old illusion
-            {
-                title: "Etherial",
-                url: "/fine-art/etherial",
-            },
+            // {
+            //     title: "Etherial",
+            //     url: "/fine-art/etherial",
+            // },
             //Old Dramatic
             {
                 title: "Illusion",
                 url: "/fine-art/illusion"
             },
-            {
-                title: "Essential",
-                url: "/fine-art/essential"
-            },
+            // {
+            //     title: "Essential",
+            //     url: "/fine-art/essential"
+            // },
             //Old Black And White
             {
                 title: "Escape",
