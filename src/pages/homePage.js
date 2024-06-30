@@ -25,7 +25,7 @@ function HomePage() {
                         data-aos-delay="100"
                      >
                         <TypeAnimation
-                           sequence={["A stylish world through my lens"]}
+                           sequence={["Timeless steps beyond reality"]}
                            speed={30}
                            cursor={false}
                         />
