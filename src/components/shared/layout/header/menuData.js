@@ -15,15 +15,16 @@ export const menuData = [
             //     title: "Etherial",
             //     url: "/fine-art/etherial",
             // },
+            {
+                title: "Essential",
+                url: "/fine-art/essential"
+            },
             //Old Dramatic
             {
                 title: "Illusion",
                 url: "/fine-art/illusion"
             },
-            // {
-            //     title: "Essential",
-            //     url: "/fine-art/essential"
-            // },
+          
             //Old Black And White
             {
                 title: "Escape",
