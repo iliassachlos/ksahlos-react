@@ -11,10 +11,10 @@ export const menuData = [
         title: "Fine Art",
         submenu: [
             //Old Etherial / illusion
-            {
-                title: "Abstract",
-                url: "/fine-art/abstract",
-            },
+            // {
+            //     title: "Abstract",
+            //     url: "/fine-art/abstract",
+            // },
             {
                 title: "Essential",
                 url: "/fine-art/essential"
