@@ -43,8 +43,7 @@ function DeleteModal({
     function deletionCompleted(message) {
         onDocDeletionComplete(message)
     }
-
-    console.log("image category", imageCategory)
+    
     return (
         <div>
             <Modal

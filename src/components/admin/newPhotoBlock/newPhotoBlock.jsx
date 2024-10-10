@@ -77,7 +77,7 @@ function NewPhotoBlock() {
                 onChange={(e) => setImageCategory(e.target.value)}
                 required
             >
-                <option value="Conceptual">Etherial (Old Illusion / Conceptual)</option>
+                <option value="Conceptual">Abstract (Old Etherial / Illusion / Conceptual)</option>
                 <option value="Black-And-White">Escape (Old Black And White)</option>
                 <option value="Stories">Illusion (Old Dramatic / Stories)</option>
                 <option value="Local-art">Local-Art</option>

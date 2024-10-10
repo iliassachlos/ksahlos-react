@@ -19,7 +19,7 @@ function LoginPage() {
             setCheckingUserState(false);
         }
     }, [navigate, user]);
-    console.log(user);
+    
     return (
         <div className="bg-[#F2F2F2] w-full h-full flex justify-center items-center">
             {checkingUserState && <div>CHECKING USER PRIVILEGES</div>}

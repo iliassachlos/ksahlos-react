@@ -39,8 +39,8 @@ function App() {
          {/* old Dramatic*/}
          <Route path="/fine-art/illusion" element={<DramaticPage />} />
 
-         {/* old Illusion */}
-         <Route path="/fine-art/etherial" element={<IllusionPage />} />
+         {/* old Illusion, Old Etherial */}
+         <Route path="/fine-art/abstract" element={<IllusionPage />} />
 
         {/* NEW Essential */}
         <Route path="/fine-art/essential" element={<EssentialPage />} />

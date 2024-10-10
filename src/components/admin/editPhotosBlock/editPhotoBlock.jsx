@@ -7,7 +7,7 @@ function EditPhotosBlock() {
     const [imageCategory, setImageCategory] = useState("Conceptual")
     
     //Photo categories
-    //etherial
+    //abstract (Old etherial)
     const [conceptualPhotos, setConceptualPhotos] = useState([])
 
     //escape
@@ -79,7 +79,7 @@ function EditPhotosBlock() {
                 required
             >
                 <option value="Conceptual" defaultChecked defaultValue>
-                    Etherial (Old Illusion / Conceptual)
+                    Abstract (Old Etherial / Illusion / Conceptual)
                 </option>
                 <option value="Black-And-White">Escape (Old Black And White)</option>
                 <option value="Stories">Illusion (Old Dramatic / Stories)</option>
