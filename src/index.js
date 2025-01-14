@@ -8,6 +8,11 @@ import LeftWhitebar from "./components/shared/layout/borders/leftWhitebar";
 import RightWhitebar from "./components/shared/layout/borders/rightWhitebar";
 import {BrowserRouter} from "react-router-dom";
 
+// Disable right-click globally
+document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+});
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
