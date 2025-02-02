@@ -1,29 +1,28 @@
 export const menuData = [
     {
-        title: "Home",
-        url: "/",
+        title: 'Home',
+        url: '/',
     },
     {
-        title: "About",
-        url: "/about",
+        title: 'About',
+        url: '/about',
     },
     {
-        title: "Fine Art",
+        title: 'Fine Art',
         submenu: [
             {
-                title: "Abstract",
-                url: "/fine-art/abstract",
+                title: 'Minimalist',
+                url: '/fine-art/minimalist',
             },
             {
-                title: "Minimalist",
-                url: "/fine-art/minimalist"
+                title: 'Minimalist BW',
+                url: '/fine-art/minimalist-bw',
             },
-            //Old Dramatic, Old illusion
             {
-                title: "Minimalist BW",
-                url: "/fine-art/minimalist-bw"
+                title: 'Abstract',
+                url: '/fine-art/abstract',
             },
-          
+
             //Old Black And White
             // {
             //     title: "Escape",
@@ -36,11 +35,11 @@ export const menuData = [
     //     url: "/local-art",
     // },
     {
-        title: "Pricing",
-        url: "/pricing",
+        title: 'Pricing',
+        url: '/pricing',
     },
     {
-        title: "Contact",
-        url: "/contact",
+        title: 'Contact',
+        url: '/contact',
     },
-]
+];
