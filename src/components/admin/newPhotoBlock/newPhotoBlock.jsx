@@ -58,48 +58,48 @@ function NewPhotoBlock() {
     }
 
     return (
-        <div className="flex flex-col">
+        <div className='flex flex-col'>
             {isUploading && <Spinner />}
-            {uploadFinishedAlert && <InfoAlert message="Image was added successfully!" />}
-            {errorAlert && <div className="my-4 bg-red-200 rounded shadow-md p-3">An Error Occurred!</div>}
-            <p className="text-sm">Image Title</p>
+            {uploadFinishedAlert && <InfoAlert message='Image was added successfully!' />}
+            {errorAlert && <div className='my-4 bg-red-200 rounded shadow-md p-3'>An Error Occurred!</div>}
+            <p className='text-sm'>Image Title</p>
             <input
-                className="mb-5 border-2 rounded shadow-md p-2"
-                type="text"
+                className='mb-5 border-2 rounded shadow-md p-2'
+                type='text'
                 value={imageTitle}
                 onChange={(e) => setImageTitle(e.target.value)}
                 required
             />
-            <p className="text-sm">Select A Category</p>
+            <p className='text-sm'>Select A Category</p>
             <select
-                className="mb-5 border-2 rounded shadow-md p-2"
+                className='mb-5 border-2 rounded shadow-md p-2'
                 value={imageCategory}
                 onChange={(e) => setImageCategory(e.target.value)}
                 required
             >
-                <option value="Conceptual">Abstract (Old Etherial / Illusion / Conceptual)</option>
-                <option value="Black-And-White">Escape (Old Black And White)</option>
-                <option value="Stories">Illusion (Old Dramatic / Stories)</option>
-                <option value="Local-art">Local-Art</option>
-                <option value="Essential">Essential</option>
+                <option value='Conceptual'>Abstract (Old Etherial / Illusion / Conceptual)</option>
+                <option value='Black-And-White'>Escape (Old Black And White)</option>
+                <option value='Stories'>Minimalist BW (Old Dramatic / Stories)</option>
+                <option value='Local-art'>Local-Art</option>
+                <option value='Essential'>Minimalist (Old Essential)</option>
             </select>
-            <p className="text-sm">Image Number</p>
+            <p className='text-sm'>Image Number</p>
             <input
-                className="mb-5 border-2 rounded shadow-md p-2"
-                type="text"
+                className='mb-5 border-2 rounded shadow-md p-2'
+                type='text'
                 value={imageNumber}
                 onChange={(e) => setImageNumber(e.target.value)}
                 required
             />
-            <p className="text-sm">Image Description</p>
+            <p className='text-sm'>Image Description</p>
             <textarea
-                className="mb-5 border-2 rounded shadow-md p-2"
+                className='mb-5 border-2 rounded shadow-md p-2'
                 value={imageDescription}
                 onChange={(e) => setImageDescription(e.target.value)}
                 required
             />
-            <input className="my-6" type="file" onChange={handleImageUploadChange} required />
-            <button className="bg-black text-white rounded shadow-md p-2 mx-14" onClick={handleSubmit}>
+            <input className='my-6' type='file' onChange={handleImageUploadChange} required />
+            <button className='bg-black text-white rounded shadow-md p-2 mx-14' onClick={handleSubmit}>
                 Submit Photo
             </button>
         </div>

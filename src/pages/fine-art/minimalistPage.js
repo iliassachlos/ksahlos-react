@@ -1,15 +1,15 @@
 import MasonryGrid from "../../components/masonryGrid/masonryGrid"
-import {useEffect, useState} from "react"
-import {getPhotos} from "../../firebase/getPhotos"
+import { useEffect, useState } from "react"
+import { getPhotos } from "../../firebase/getPhotos"
 import Spinner from "../../components/spinner/spinner"
 import PaginationComponent from "../../components/shared/pagination"
 
-//Currently Illusion
-function DramaticPage() {
+//Currently Essential
+function MinimalistPage() {
     const [photosData, setPhotosData] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
 
-    const category = 'stories'
+    const category = 'essential'
 
     const photosPerPage = 15
     const indexOfLastPhoto = currentPage * photosPerPage
@@ -31,14 +31,14 @@ function DramaticPage() {
 
     function handlePageChange(pageNumber) {
         setCurrentPage(pageNumber)
-        window.scrollTo({top: 0, behavior: 'smooth'})
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
     return (
         <div className="p-2">
             {photosData.length > 0 ?
                 <>
-                    <MasonryGrid photos={currentPhotos}/>
+                    <MasonryGrid photos={currentPhotos} />
                     <div className="flex justify-center items-center">
                         <PaginationComponent
                             totalItems={photosData.length}
@@ -49,11 +49,11 @@ function DramaticPage() {
                     </div>
                 </>
                 : <div className='flex justify-center items-center w-full h-screen'>
-                    <Spinner/>
+                    <Spinner />
                 </div>
             }
         </div>
     )
 }
 
-export default DramaticPage
+export default MinimalistPage

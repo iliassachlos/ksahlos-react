@@ -10,26 +10,25 @@ export const menuData = [
     {
         title: "Fine Art",
         submenu: [
-            //Old Etherial / illusion
-            // {
-            //     title: "Abstract",
-            //     url: "/fine-art/abstract",
-            // },
             {
-                title: "Essential",
-                url: "/fine-art/essential"
+                title: "Abstract",
+                url: "/fine-art/abstract",
             },
-            //Old Dramatic
             {
-                title: "Illusion",
-                url: "/fine-art/illusion"
+                title: "Minimalist",
+                url: "/fine-art/minimalist"
+            },
+            //Old Dramatic, Old illusion
+            {
+                title: "Minimalist BW",
+                url: "/fine-art/minimalist-bw"
             },
           
             //Old Black And White
-            {
-                title: "Escape",
-                url: "/fine-art/escape",
-            },
+            // {
+            //     title: "Escape",
+            //     url: "/fine-art/escape",
+            // },
         ],
     },
     // {

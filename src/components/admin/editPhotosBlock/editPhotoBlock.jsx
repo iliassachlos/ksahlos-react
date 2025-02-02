@@ -13,19 +13,19 @@ function EditPhotosBlock() {
     //escape
     const [blackAndWhitePhotos, setBlackAndWhitePhotos] = useState([])
 
-    //illusion
-    const [dramaticPhotos, setDramaticPhotos] = useState([])
+    //
+    const [minimalistBW, setMinimalistBW] = useState([])
 
     const [localArtPhotos, setLocalArtPhotos] = useState([])
-    const [essentialPhotos, setEssentialPhotos] = useState()
+    const [minimalistPhotos, setMinimalistPhotos] = useState()
 
 
     useEffect(() => {
         getEtherialPhotos()
         getEscapePhotos()
-        getIllusionPhotos()
+        getMinimalistBWPhotos()
         getLocalArtPhotos()
-        getEssentialPhotos()
+        getMinimalistPhotos()
     }, [])
 
     //Warning: Etherial indexes to conceptual in database
@@ -45,11 +45,11 @@ function EditPhotosBlock() {
     }
 
     //Warning: Illusion indexes to stories collection in database
-    async function getIllusionPhotos() {
+    async function getMinimalistBWPhotos() {
         const querySnapshot = await getDocs(collection(db, "photos", "gallery", "stories"))
         const photosData = querySnapshot.docs.map((doc) => ({ ...doc.data(), uid: doc.id }))
         const sortedPhotos = photosData.sort((a, b) => a.number - b.number)
-        setDramaticPhotos(sortedPhotos)
+        setMinimalistBW(sortedPhotos)
     }
 
     async function getLocalArtPhotos() {
@@ -59,11 +59,11 @@ function EditPhotosBlock() {
         setLocalArtPhotos(sortedPhotos)
     }
 
-    async function getEssentialPhotos() {
+    async function getMinimalistPhotos() {
         const querySnapshot = await getDocs(collection(db, "photos", "gallery", "essential"))
         const photosData = querySnapshot.docs.map((doc) => ({ ...doc.data(), uid: doc.id }))
         const sortedPhotos = photosData.sort((a, b) => a.number - b.number)
-        setEssentialPhotos(sortedPhotos)
+        setMinimalistPhotos(sortedPhotos)
     }
 
     function handleImageCategoryChange(e) {
@@ -82,9 +82,9 @@ function EditPhotosBlock() {
                     Abstract (Old Etherial / Illusion / Conceptual)
                 </option>
                 <option value="Black-And-White">Escape (Old Black And White)</option>
-                <option value="Stories">Illusion (Old Dramatic / Stories)</option>
+                <option value="Stories">Minimalist BW (Old Dramatic / Stories)</option>
                 <option value="Local-Art">Local-Art</option>
-                <option value="Essential">Essential</option>
+                <option value="Essential">Minimalist (Old Essential)</option>
             </select>
 
             {imageCategory === "Conceptual" && (
@@ -104,12 +104,12 @@ function EditPhotosBlock() {
             )}
             {imageCategory === "Stories" && (
                 <div>
-                    <PhotosTable photos={dramaticPhotos} imageCategory={imageCategory} />
+                    <PhotosTable photos={minimalistBW} imageCategory={imageCategory} />
                 </div>
             )}
             {imageCategory === "Essential" && (
                 <div>
-                    <PhotosTable photos={essentialPhotos} imageCategory={imageCategory} />
+                    <PhotosTable photos={minimalistPhotos} imageCategory={imageCategory} />
                 </div>
             )}
         </div>
