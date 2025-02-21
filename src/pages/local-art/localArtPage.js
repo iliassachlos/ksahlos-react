@@ -34,7 +34,7 @@ function LocalArtPage() {
     }
 
     return (
-        <div className="p-2">
+        <div className="p-2 bg-black">
             {photosData.length > 0 ?
                 <>
                     <MasonryGrid photos={currentPhotos}/>
